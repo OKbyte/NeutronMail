@@ -1,0 +1,22 @@
+printWidth: 80                   # <int> default: 120
+tabWidth: 4                      # <int> default: 2
+useTabs: false                   # <bool>
+semi: true                       # <bool>
+singleQuote: true                # <bool> default: false
+quoteProps: "as-needed"          # "<as-needed|consistent|preserve>"
+jsxSingleQuote: false            # <bool>
+trailingComma: "es5"             # "<none|es5|all>" default: "none"
+bracketSpacing: true             # <bool>
+jsxBracketSameLine: false        # <bool>
+arrowParens: "avoid"             # "<avoid|always>"
+proseWrap: "preserve"            # "<always|never|preserve>"
+htmlWhitespaceSensitivity: "css" # "<css|strict|ignore>"
+endOfLine: "lf"                  # "<auto|lf|crlf|cr>" default: "auto"
+overrides:
+  - files:
+      - "*.css"
+      - "*.scss"
+      - "*.less"
+    options:
+      tabWidth: 2
+      singleQuote: false
