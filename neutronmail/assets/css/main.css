@@ -68,6 +68,12 @@ html {
   margin: 0 -40px;
 }
 
+.page__social {
+  position: fixed;
+  top: 322px;
+  right: 32px;
+}
+
 /* Utility */
 .visuallyhidden:not(:focus):not(:active) {
   position: absolute;
@@ -483,4 +489,45 @@ html {
 
 .hero__btn + .hero__btn {
   margin-left: 22px;
+}
+
+/* Social */
+.social {
+  display: flex;
+  flex-direction: column;
+}
+
+.social__link {
+  width: 23px;
+  height: 23px;
+
+  text-decoration: none;
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.8;
+
+  transition: opacity 150ms ease-out;
+}
+
+.social__link:hover,
+.social__link:focus,
+.social__link:active {
+  opacity: 1;
+}
+
+.social__link + .social__link {
+  margin-top: 14px;
+}
+
+.social__link[href*="google"] {
+  background-image: url("../images/icon-google-plus.svg");
+}
+
+.social__link[href*="facebook"] {
+  background-image: url("../images/icon-facebook.svg");
+}
+
+.social__link[href*="twitter"] {
+  background-image: url("../images/icon-twitter.svg");
 }
