@@ -6,8 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>NeutronMail</title>
 
-  <link rel="stylesheet" href="./assets/css/normalize.css">
-  <link rel="stylesheet" href="./assets/css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:600,700" rel="stylesheet">
+  <link href="./assets/css/normalize.css" rel="stylesheet">
+  <link href="./assets/css/main.css" rel="stylesheet">
 
   <!-- Pixel Glass -->
   <style>
@@ -22,7 +23,38 @@
   <script src="../node_modules/pixel-glass/script.js"></script>
   <!-- // Pixel Glass -->
 </head>
-<body>
-  <h1>NeutronMail</h1>
+<body class="page">
+  <header class="page__header">
+    <div class="nav-panel">
+      <h1 class="nav-panel__logo logo">neutron<span>Mail</span></h1>
+      <button class="nav-panel__mobile-nav btn-ghost btn-ghost_icon_bars" tupe="button"><span>Menu</span></button>
+      <nav class="nav-panel__nav nav-main">
+        <a class="nav-main__link" href="#">About</a>
+        <a class="nav-main__link" href="#">Security</a>
+        <a class="nav-main__link" href="#">Blog</a>
+        <a class="nav-main__link" href="#">Careers</a>
+        <a class="nav-main__link" href="#">Support</a>
+        <a class="nav-main__link" href="#">Donate</a>
+      </nav>
+      <div class="nav-panel__account">
+        <button class="nav-panel__log-in-btn btn-ghost btn-ghost_icon_sign-in" type="button"><span>Log in</span></button>
+        <button class="nav-panel__sign-in-btn btn btn_style_alt" type="button"><span>Sign up</span></button>
+      </div>
+      <ul class="nav-panel__langs langs-switcher">
+        <li class="langs-switcher__lang">
+          <a class="langs-switcher__link langs-switcher__link_active" href="#">English</a>
+        </li>
+        <li class="langs-switcher__lang">
+          <a class="langs-switcher__link" href="#">French</a>
+        </li>
+        <li class="langs-switcher__lang">
+          <a class="langs-switcher__link" href="#">Italian</a>
+        </li>
+        <li class="langs-switcher__lang">
+          <a class="langs-switcher__link" href="#">Polish</a>
+        </li>
+      </ul>
+    </div>
+  </header>
 </body>
 </html>

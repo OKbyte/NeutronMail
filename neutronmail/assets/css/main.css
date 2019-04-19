@@ -1,6 +1,293 @@
-/* Global */
+/* Fonts */
+@font-face {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Titillium Web";
+
+  font-display: fallback;
+  src: local("Titillium Web Regular"),
+    local("TitilliumWeb-Regular"),
+    url("../fonts/TitilliumWeb-Regular.woff") format("woff2"),
+    url("../fonts/Lato-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 600;
+  font-family: "Titillium Web";
+
+  font-display: fallback;
+  src: local("Titillium Web SemiBold"),
+    local("TitilliumWeb-SemiBold"),
+    url("../fonts/TitilliumWeb-SemiBold.woff2") format("woff2"),
+    url("../fonts/TitilliumWeb-SemiBold.woff") format("woff");
+}
+
+@font-face {
+  font-style: normal;
+  font-weight: 700;
+  font-family: "Titillium Web";
+
+  font-display: fallback;
+  src: local("Titillium Web Bold"),
+    local("TitilliumWeb-Bold"),
+    url("../fonts/TitilliumWeb-Bold.woff2") format("woff2"),
+    url("../fonts/TitilliumWeb-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-style: italic;
+  font-weight: 400;
+  font-family: "Malaga";
+
+  font-display: fallback;
+  src: local("Malaga OT Reg Italic"),
+    local("MalagaOT-RegItalic"),
+    url("../fonts/MalagaOT-RegItalic.woff2") format("woff2"),
+    url("../fonts/MalagaOT-RegItalic.woff") format("woff");
+}
+
+/* Base */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+html {
+  font-family: "Titillium Web", "Arial", "Helvetica", sans-serif;
+}
+
+.page {
+  padding: 0 40px;
+
+  color: hsl(220, 1%, 53%);
+}
+
+/* Blocks */
+.btn {
+  width: 94px;
+  height: 40px;
+  padding: 10px 12px;
+
+  font-weight: 700;
+  color: hsl(0, 0%, 100%);
+
+  background-color: hsl(272, 48%, 33%);
+  border: none;
+  border-radius: 20px;
+  box-shadow: inset 0 -3px 3px hsla(0, 0%, 0%, 0.05),
+    0 9px 27px -3px hsl(224, 53%, 60%),
+    0 6px 3px -3px hsla(224, 53%, 60%, 0.4);
+
+  transition-timing-function: ease-out;
+  transition-duration: 200ms;
+  transition-property: background-color box-shadow;
+}
+
+.btn span {
+  vertical-align: 4px;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active {
+  background-color: hsl(358, 97%, 56%);
+  box-shadow: inset 0 -3px 3px hsla(0, 0%, 0%, 0.05),
+    0 9px 27px -3px hsl(224, 53%, 60%, 0.8),
+    0 6px 3px -3px hsla(224, 53%, 60%, 0.4);
+}
+
+.btn_style_alt {
+  background-image: linear-gradient(to bottom right, hsla(224, 53%, 60%, 0), hsl(224, 53%, 60%));
+}
+
+.btn-ghost {
+  padding: 0 0 0 26px;
+
+  font-weight: 700;
+  color: hsl(0, 0%, 27%);
+
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-size: contain;
+  border: none;
+}
+
+.btn-ghost_icon_bars {
+  background-image: url("../images/icon-bars.svg");
+}
+
+.btn-ghost_icon_sign-in {
+  background-image: url("../images/icon-sign-in.svg");
+}
+
+.btn-ghost span {
+  border-bottom: 1px solid hsla(0, 0%, 27%, 0);
+
+  transition: border-color 150ms ease-out;
+}
+
+.btn-ghost:hover {
+  cursor: pointer;
+}
+
+.btn-ghost:hover,
+.btn-ghost:focus,
+.btn-ghost:active {
+  color: hsl(258, 39%, 42%);
+}
+
+.btn-ghost:hover span,
+.btn-ghost:focus span,
+.btn-ghost:active span {
+  border-color: hsla(258, 39%, 42%, 0.5);
+}
+
+.nav-main__link {
+  color: hsl(0, 0%, 27%);
+  text-decoration: none;
+
+  border-bottom: 1px solid hsla(0, 0%, 27%, 0);
+
+  transition: border-color 150ms ease-out;
+}
+
+.nav-main__link:hover,
+.nav-main__link:focus {
+  color: hsl(258, 39%, 42%);
+
+  border-color: hsla(258, 39%, 42%, 0.5);
+}
+
+.nav-main__link + .nav-main__link {
+  margin-left: 23px;
+}
+
+.langs-switcher {
+  display: flex;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+  font-size: 14px;
+}
+
+.langs-switcher__lang + .langs-switcher__lang::before {
+  content: "/";
+
+  padding: 0 8px;
+}
+
+.langs-switcher__link {
+  color: rgb(149, 149, 149);
+  text-decoration: none;
+
+  border-bottom: 1px solid rgb(191, 197, 212, 0);
+
+  transition: border-color 150ms ease-in-out;
+}
+
+.langs-switcher__link:hover,
+.langs-switcher__link:focus {
+  border-bottom: 1px solid rgb(191, 197, 212);
+}
+
+.langs-switcher__link_active {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+
+  border-color: rgb(191, 197, 212);
+}
+
+/* Header */
+.nav-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 75px 0 7px;
+}
+
+/* TODO: add ability to open mobile menu */
+.nav-panel__mobile-nav {
+  margin-left: auto;
+}
+
+@media screen and (min-width: 1024px) {
+  .nav-panel__mobile-nav {
+    display: none;
+  }
+}
+
+.nav-panel__nav {
+  display: none;
+  margin-left: auto;
+}
+
+@media screen and (min-width: 1024px) {
+  .nav-panel__nav {
+    display: block;
+  }
+}
+
+/* TODO: rename element */
+.nav-panel__account {
+  display: inherit;
+  align-items: inherit;
+  width: 100%;
+  margin-top: 14px;
+}
+
+@media screen and (min-width: 640px) {
+  .nav-panel__account {
+    width: unset;
+    margin-top: unset;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .nav-panel__log-in-btn {
+    margin-left: 24px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .nav-panel__log-in-btn {
+    margin-left: 74px;
+  }
+}
+
+.nav-panel__sign-in-btn {
+  margin-top: 2px;
+  margin-left: 24px;
+}
+
+.nav-panel__langs {
+  width: 100%;
+  margin-top: 20px;
+}
+
+@media screen and (min-width: 640px) {
+  .nav-panel__langs {
+    margin-top: 14px;
+  }
+}
+
+/* TODO: move to Block section */
+.logo {
+  margin: 0;
+
+  font-size: 30px;
+  line-height: 1;
+}
+
+.logo span {
+  color: hsl(258, 39%, 42%);
 }
