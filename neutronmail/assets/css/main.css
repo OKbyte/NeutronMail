@@ -64,18 +64,43 @@ html {
   color: hsl(220, 1%, 53%);
 }
 
+.page__hero {
+  margin: 0 -40px;
+}
+
+/* Utility */
+.visuallyhidden:not(:focus):not(:active) {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  border: 0;
+
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+}
+
 /* Blocks */
 .btn {
-  width: 94px;
-  height: 40px;
+  width: 100%;
+  height: 56px;
   padding: 10px 12px;
 
   font-weight: 700;
+  font-size: 18px;
   color: hsl(0, 0%, 100%);
+  text-decoration: none;
 
   background-color: hsl(272, 48%, 33%);
+  background-image: linear-gradient(to left, hsla(224, 53%, 60%, 0), hsl(224, 53%, 60%));
   border: none;
-  border-radius: 20px;
+  border-radius: 28px;
   box-shadow: inset 0 -3px 3px hsla(0, 0%, 0%, 0.05),
     0 9px 27px -3px hsl(224, 53%, 60%),
     0 6px 3px -3px hsla(224, 53%, 60%, 0.4);
@@ -103,7 +128,42 @@ html {
 }
 
 .btn_style_alt {
+  width: 94px;
+  height: 40px;
+
+  font-size: 16px;
+
   background-image: linear-gradient(to bottom right, hsla(224, 53%, 60%, 0), hsl(224, 53%, 60%));
+  border-radius: 20px;
+}
+
+.btn_style_circle {
+  width: 46px;
+  height: 46px;
+
+  background-color: hsla(272, 48%, 33%, 0.8);
+  background-image: unset;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 23px 23px;
+  border-radius: 23px;
+  box-shadow: unset;
+}
+
+.btn_style_circle:hover,
+.btn_style_circle:focus,
+.btn_style_circle:active {
+  background-color: hsl(358, 97%, 56%, 0.8);
+  box-shadow: unset;
+}
+
+.button_icon_app-store {
+  background-image: url("../images/icon-apple.svg");
+}
+
+.button_icon_play-store {
+  background-image: url("../images/icon-google-play.svg");
+  background-position-x: left 55%;
 }
 
 .btn-ghost {
@@ -111,6 +171,7 @@ html {
 
   font-weight: 700;
   color: hsl(0, 0%, 27%);
+  text-decoration: none;
 
   background-color: transparent;
   background-repeat: no-repeat;
@@ -290,4 +351,136 @@ html {
 
 .logo span {
   color: hsl(258, 39%, 42%);
+}
+
+/* About */
+.hero {
+  min-height: 640px;
+  padding: 155px 40px 0;
+
+  background: url("../images/hero-image.jpg") center bottom/cover no-repeat;
+}
+
+.hero__content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.hero__title {
+  margin: 0;
+
+  font-weight: 600;
+  font-size: 40px;
+  text-align: center;
+  color: hsl(0, 0%, 27%);
+  letter-spacing: 0.01em;
+}
+
+@media screen and (min-width: 480px) {
+  .hero__title {
+    font-size: 50px;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .hero__title {
+    font-size: 60px;
+  }
+}
+
+.hero__subtitle {
+  margin: 10px 0 0;
+
+  font-size: 24px;
+  text-align: center;
+  color: hsl(0, 0%, 27%);
+  letter-spacing: 0.01em;
+}
+
+@media screen and (min-width: 480px) {
+  .hero__subtitle {
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .hero__subtitle {
+    font-size: 36px;
+  }
+}
+
+.hero__subtitle span {
+  color: hsl(358, 97%, 56%);
+}
+
+.hero__btns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 72px 0 0;
+}
+
+@media screen and (min-width: 1024px) {
+  .hero__btns {
+    position: relative;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hero__btns::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: calc(50% - 300px);
+    z-index: 1;
+
+    width: 600px;
+    height: 50%;
+
+    background-image: radial-gradient(ellipse 200px 6px at 40% 100%, hsla(224, 53%, 60%, 0.8), hsla(224, 53%, 60%, 0)),
+      radial-gradient(ellipse 300px 6px at center 100%, hsl(224, 53%, 60%), hsla(224, 53%, 60%, 0));
+  }
+
+  .hero__btns::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 300px);
+    z-index: 1;
+
+    width: 600px;
+    height: 100%;
+
+    background-image: radial-gradient(ellipse 200px 50px at 40% 0, hsla(224, 53%, 60%, 0.8), hsla(224, 53%, 60%, 0)),
+      radial-gradient(ellipse 300px 30px at center 0, hsl(224, 53%, 60%), hsla(224, 53%, 60%, 0));
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hero__btn {
+    z-index: 3;
+  }
+}
+
+.hero__btn_large {
+  width: 246px;
+}
+
+.hero__apps {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 22px 0 0;
+}
+
+@media screen and (min-width: 640px) {
+  .hero__apps {
+    width: unset;
+    margin: 0 0 0 22px;
+  }
+}
+
+.hero__btn + .hero__btn {
+  margin-left: 22px;
 }
