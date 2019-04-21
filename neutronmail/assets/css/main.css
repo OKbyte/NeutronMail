@@ -109,7 +109,7 @@ blockquote + cite {
 .wrapper::before {
   content: "";
   position: relative;
-  z-index: 3;
+  z-index: 1;
 
   background: url("../images/triangle.svg") center/1800px 100% no-repeat;
 
@@ -126,7 +126,7 @@ blockquote + cite {
 .wrapper::after {
   content: "";
   position: relative;
-  z-index: 1;
+  z-index: 0;
 
   background-image: linear-gradient(to right, hsl(0, 0%, 98%), hsl(0, 0%, 93%));
 
@@ -136,7 +136,7 @@ blockquote + cite {
 
 .page__reviews {
   position: relative;
-  z-index: 10;
+  z-index: 3;
 
   display: grid;
 
@@ -154,7 +154,7 @@ blockquote + cite {
 
 .page__apps {
   position: relative;
-  z-index: 5;
+  z-index: 3;
 
   display: grid;
 
@@ -232,11 +232,34 @@ blockquote + cite {
   }
 }
 
+.page__donate {
+  position: relative;
+  z-index: 3;
+
+  display: grid;
+
+  grid-column: 1 / -1;
+  grid-row: 4 / span 1;
+  grid-template-columns: 40px 1fr minmax(auto, 1000px) 1fr 40px;
+}
+
+@media screen and (min-width: 1200px) {
+  .page__donate {
+    grid-template-columns: 1fr minmax(auto, 200px) 1000px minmax(auto, 200px) 1fr;
+  }
+}
+
+.page__donate-inner {
+  grid-column: 3 / span 1;
+  grid-row: 1 / -1;
+  justify-self: center;
+}
+
 .page__social {
   position: fixed;
   top: 322px;
   right: 8px;
-  z-index: 7;
+  z-index: 10;
 }
 
 @media screen and (min-width: 1400px) {
@@ -276,9 +299,8 @@ blockquote + cite {
 /*#region*/
 .btn {
   display: inline-block;
-  width: 100%;
   height: 56px;
-  padding: 10px 12px;
+  padding: 10px 18px;
 
   font-weight: 700;
   font-size: 18px;
@@ -298,8 +320,12 @@ blockquote + cite {
   transition-property: background-color box-shadow;
 }
 
-.btn span {
+button.btn span {
   vertical-align: 4px;
+}
+
+a.btn span {
+  vertical-align: -4px;
 }
 
 .btn:hover {
@@ -313,6 +339,20 @@ blockquote + cite {
   box-shadow: inset 0 -3px 3px hsla(0, 0%, 0%, 0.05),
     0 9px 27px -3px hsl(224, 53%, 60%, 0.8),
     0 6px 3px -3px hsla(224, 53%, 60%, 0.4);
+}
+
+.btn_style_atention {
+  background-color: hsl(227, 74%, 64%);
+  background-image: linear-gradient(to left, hsla(193, 73%, 54%, 0), hsl(193, 73%, 54%));
+  box-shadow: inset 0 -3px 3px hsla(0, 0%, 0%, 0.05),
+    0 9px 27px -3px hsl(193, 73%, 54%),
+    0 6px 3px -3px hsla(193, 53%, 14%, 0.4);
+}
+
+.btn_style_atention:hover,
+.btn_style_atention:focus,
+.btn_style_atention:active {
+  background-color: hsl(272, 48%, 33%);
 }
 
 .btn_style_white {
@@ -348,12 +388,12 @@ blockquote + cite {
   box-shadow: unset;
 }
 
-.btn_style_white span {
+a.btn_style_white span {
   vertical-align: unset;
 }
 
 @media screen and (min-width: 480px) {
-  .btn_style_white span {
+  a.btn_style_white span {
     vertical-align: -8px;
   }
 }
@@ -371,6 +411,7 @@ blockquote + cite {
 .btn_style_circle {
   width: 46px;
   height: 46px;
+  padding: 0;
 
   background-color: hsla(272, 48%, 33%, 0.8);
   background-image: unset;
@@ -1312,10 +1353,91 @@ blockquote + cite {
 
 .apps__link {
   display: inline-block;
+  margin-top: 9px;
 }
 
 .apps__link + .apps__link {
-  margin: 9px 0 0 9px;
+  margin-left: 9px;
+}
+/*#endregion*/
+
+/* Donate */
+/*#region*/
+.donate__text {
+  padding-top: 70px;
+
+  text-align: right;
+}
+
+@media screen and (min-width: 768px) {
+  .donate__text {
+    text-align: center;
+  }
+}
+
+.donate__title {
+  margin: 0;
+
+  font-size: 36px;
+  color: hsl(0, 0%, 33%);
+  letter-spacing: 0.01em;
+}
+
+.donate__description {
+  margin: 3px 0 0;
+
+  font-size: 29px;
+  color: hsl(0, 0%, 49%);
+  letter-spacing: 0.01em;
+}
+
+.donate__links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 20px 0 82px;
+
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .donate__links {
+    display: block;
+  }
+}
+
+.donate__link {
+  margin-top: 20px;
+}
+
+.donate__link + .donate__link {
+  margin-left: 47px;
+}
+
+.donate__link_upgrade {
+  min-width: 246px;
+}
+
+.donate__link_upgrade span {
+  padding-left: 28px;
+
+  letter-spacing: 0.02em;
+
+  background: url("../images/icon-cloud-upload.svg") center left/22px auto
+    no-repeat;
+}
+
+.donate__link_donate {
+  min-width: 166px;
+}
+
+.donate__link_donate span {
+  margin-left: -1px;
+  padding-left: 23px;
+
+  letter-spacing: 0.02em;
+
+  background: url("../images/icon-usd.svg") center left/19px auto no-repeat;
 }
 /*#endregion*/
 
