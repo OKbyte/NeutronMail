@@ -1487,6 +1487,8 @@ a.btn_style_white span {
 
   font-size: 24px;
   color: hsl(0, 0%, 33%);
+
+  font-weight: 400;
 }
 
 @media screen and (min-width: 480px) {
