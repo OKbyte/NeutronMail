@@ -302,7 +302,7 @@ blockquote + cite {
 @media screen and (min-width: 1200px) {
   .page__apps::after {
     height: 570px;
-    margin-top: -252px;
+    margin-top: -250px;
     margin-right: -75px;
   }
 }
@@ -310,7 +310,7 @@ blockquote + cite {
 @media screen and (min-width: 1400px) {
   .page__apps::after {
     height: 670px;
-    margin-top: -322px;
+    margin-top: -320px;
     margin-right: -130px;
   }
 }
@@ -472,7 +472,7 @@ button.btn span {
 }
 
 a.btn span {
-  vertical-align: -4px;
+  vertical-align: -6px;
 }
 
 .btn:hover {
@@ -831,7 +831,7 @@ a.btn_style_white span {
   margin: 28px 0 0;
 
   font-size: 14px;
-  line-height: 1.55;
+  line-height: 1.6;
   color: hsl(0, 1%, 58%);
   letter-spacing: 0.01em;
   hyphens: manual;
@@ -850,9 +850,9 @@ a.btn_style_white span {
 }
 
 .list-images_align_right {
-  justify-content: right;
+  justify-content: flex-end;
   margin-right: 0;
-  margin-left: 17;
+  margin-left: 17px;
 }
 
 .list-images__image {
@@ -1477,7 +1477,7 @@ a.btn_style_white span {
 }
 
 .apps__text {
-  margin: -40px 0 0;
+  margin: -36px 0 0;
 
   letter-spacing: 0.01em;
 }
@@ -1485,10 +1485,9 @@ a.btn_style_white span {
 .apps__title {
   margin: 0;
 
+  font-weight: 400;
   font-size: 24px;
   color: hsl(0, 0%, 33%);
-
-  font-weight: 400;
 }
 
 @media screen and (min-width: 480px) {
@@ -1504,7 +1503,7 @@ a.btn_style_white span {
 }
 
 .apps__description {
-  margin: 17px 0 0;
+  margin: 16px 0 0;
 
   line-height: 1.35;
   color: hsl(0, 1%, 58%);
@@ -1871,8 +1870,8 @@ a.btn_style_white span {
 
 .copyright {
   margin: 0;
-  padding-top: 16px;
-  padding-bottom: 35px;
+  padding-top: 18px;
+  padding-bottom: 34px;
 
   font-size: 12px;
   color: hsl(0, 0%, 36%);
