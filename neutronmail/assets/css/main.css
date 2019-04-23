@@ -88,6 +88,104 @@ blockquote + cite {
   padding: 0 40px;
 }
 
+.page__header {
+  padding: 75px 0 7px;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header__nav-panel {
+  display: inherit;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  align-items: inherit;
+  width: 100%;
+}
+
+.header__logo {
+  margin: 0 74px 0 0;
+}
+
+.header__nav {
+  height: 34px;
+  margin-top: 24px;
+
+  -webkit-mask-image: linear-gradient(to right, transparent, hsl(0, 0%, 0%) 20px, hsl(0, 0%, 0%) 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, hsl(0, 0%, 0%) 20px, hsl(0, 0%, 0%) 90%, transparent);
+}
+
+.header__account {
+  display: inherit;
+  align-items: inherit;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.header__sign-in {
+  margin-left: 24px;
+
+  transform: translateY(2px);
+}
+
+.header__langs {
+  width: 100%;
+  margin: 24px 0 0;
+}
+
+@media screen and (min-width: 540px) {
+  .header__nav-panel {
+    flex-wrap: nowrap;
+  }
+
+  .header__nav {
+    height: unset;
+    margin-top: 0;
+    margin-left: auto;
+  }
+
+  .header__account {
+    margin-top: 16px;
+  }
+}
+
+@media screen and (min-width: 723px) {
+  .header__nav {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+
+@media screen and (min-width: 940px) {
+  .header__nav-panel {
+    width: unset;
+  }
+
+  .header__account {
+    width: unset;
+    margin-top: unset;
+  }
+
+  .header__log-in {
+    margin-left: 26px;
+  }
+
+  .header__langs {
+    margin-top: 16px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header__log-in {
+    margin-left: 74px;
+  }
+}
+
 .page__hero {
   margin: 0 -40px;
 }
@@ -335,6 +433,15 @@ blockquote + cite {
 /*#endregion*/
 
 /* Blocks */
+
+.logo {
+  font-size: 30px;
+}
+
+.logo span {
+  color: hsl(258, 39%, 42%);
+}
+
 /* btn */
 /*#region*/
 .btn {
@@ -528,7 +635,15 @@ a.btn_style_white span {
 
 /* nav-main */
 /*#region*/
-.nav-main__link {
+.nav {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.nav__link {
   color: hsl(0, 0%, 27%);
   text-decoration: none;
 
@@ -537,22 +652,21 @@ a.btn_style_white span {
   transition: border-color 150ms ease-out;
 }
 
-.nav-main__link:hover,
-.nav-main__link:focus {
+.nav__link:hover,
+.nav__link:focus {
   color: hsl(258, 39%, 42%);
 
   border-color: hsla(258, 39%, 42%, 0.5);
 }
 
-.nav-main__link + .nav-main__link {
-  margin-left: 23px;
+.nav__link + .nav__link {
+  margin-left: 26px;
 }
 /*#endregion*/
 
 .inline-list {
   display: flex;
   flex-wrap: wrap;
-  margin: 0;
   padding: 0;
 
   list-style: none;
@@ -890,98 +1004,6 @@ a.btn_style_white span {
 .contacts__list a:focus {
   text-decoration-color: hsla(0, 0%, 36%, 0.5);
 }
-
-/* Header */
-/*#region*/
-.nav-panel {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 75px 0 7px;
-}
-
-/* TODO: add ability to open mobile menu */
-.nav-panel__mobile-nav {
-  margin-left: auto;
-}
-
-@media screen and (min-width: 1024px) {
-  .nav-panel__mobile-nav {
-    display: none;
-  }
-}
-
-.nav-panel__nav {
-  display: none;
-  margin-left: auto;
-}
-
-@media screen and (min-width: 1024px) {
-  .nav-panel__nav {
-    display: block;
-  }
-}
-
-/* TODO: rename element */
-.nav-panel__account {
-  display: inherit;
-  align-items: inherit;
-  width: 100%;
-  margin-top: 14px;
-}
-
-@media screen and (min-width: 640px) {
-  .nav-panel__account {
-    width: unset;
-    margin-top: unset;
-  }
-}
-
-@media screen and (min-width: 640px) {
-  .nav-panel__log-in-btn {
-    margin-left: 24px;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .nav-panel__log-in-btn {
-    margin-left: 74px;
-  }
-}
-
-.nav-panel__sign-in-btn {
-  margin-top: 2px;
-  margin-left: 24px;
-}
-
-.nav-panel__langs {
-  width: 100%;
-  margin-top: 20px;
-}
-
-@media screen and (min-width: 640px) {
-  .nav-panel__langs {
-    margin-top: 14px;
-  }
-}
-/*#endregion*/
-
-/* TODO: move to Block section */
-/* logo */
-/*#region*/
-.logo {
-  margin: 0;
-
-  font-size: 30px;
-  line-height: 1;
-}
-
-.logo span {
-  color: hsl(258, 39%, 42%);
-}
-/*#endregion*/
 
 /* About */
 /*#region*/
@@ -1652,6 +1674,11 @@ a.btn_style_white span {
 .footer__last-line {
   grid-column: 1 / -1;
   grid-row: 5 / -1;
+}
+
+.footer__social {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 @media screen and (min-width: 480px) {
