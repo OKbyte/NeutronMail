@@ -28,7 +28,7 @@
   <header class="page__header header">
     <div class="header__nav-panel">
       <h1 class="header__logo logo">neutron<span>Mail</span></h1>
-      <nav class="header__nav nav">
+      <nav class="header__nav nav" aria-label="Main navigation">
         <a class="nav__link" href="#">About</a>
         <a class="nav__link" href="#">Security</a>
         <a class="nav__link" href="#">Blog</a>
@@ -37,11 +37,11 @@
         <a class="nav__link" href="#">Donate</a>
       </nav>
     </div>
-    <div class="header__account">
+    <div class="header__account" aria-label="Create an account or login">
       <button class="header__log-in btn-ghost btn-ghost_icon_sign-in" type="button"><span>Log in</span></button>
       <button class="header__sign-in btn btn_style_alt" type="button"><span>Sign up</span></button>
     </div>
-    <ul class="header__langs inline-list inline-list_style_nav">
+    <ul class="header__langs inline-list inline-list_style_nav" aria-label="Choose language">
       <li class="inline-list__item">
         <a class="inline-list__link inline-list__link_active" href="#">English</a>
       </li>
@@ -116,7 +116,7 @@
         <a class="security__btn btn btn_style_white" href="#"><span>Learn more about our security features</span></a>
       </div>
 
-      <div class="security__item security__item_angel"></div>
+      <div class="security__item security__item_angel" aria-hidden="true"></div>
     </section>
   </section>
 
@@ -153,34 +153,34 @@
         <h3 class="visuallyhidden">Reviews</h3>
 
         <ul class="slider__slides">
-          <li class="slider__slide slider__slide_active">
+          <li class="slider__slide slider__slide_active" id="boston-herald-review" role="tabpanel" aria-labelledby="boston-herald-review-tab">
             <blockquote cite="//a.url.that/designates-a-source-document-or-message/for-the-information-quoted.html">
               <p>A new email service being developed by a group from MIT and CERN promises to bring secure, encrypted email to the masses and keep sensitive information away from prying eyes.</p>
             </blockquote>
             <cite>— Boston Herald</cite>
           </li>
-          <li class="slider__slide">
+          <li class="slider__slide" id="lorem-ipsum-review" role="tabpanel" aria-labelledby="lorem-ipsum-review-tab">
             <blockquote cite="//a.url.that/designates-a-source-document-or-message/for-the-information-quoted.html">
               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga obcaecati ea quasi ullam praesentium, id voluptatem labore sed facilis facere rem repellendus voluptatibus hic quis repudiandae omnis dolorem nesciunt delectus.</p>
             </blockquote>
             <cite>— Lorem ipsum</cite>
           </li>
-          <li class="slider__slide">
+          <li class="slider__slide" id="labore-sequi-review" role="tabpanel" aria-labelledby="labore-sequi-review-tab">
             <blockquote cite="//a.url.that/designates-a-source-document-or-message/for-the-information-quoted.html">
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem quisquam minima doloribus voluptatibus labore sequi quod a rerum voluptas inventore obcaecati exercitationem impedit, fugit architecto, necessitatibus ducimus consequatur animi omnis?</p>
             </blockquote>
-            <cite>— Lorem ipsum</cite>
+            <cite>— Labore sequi</cite>
           </li>
         </ul>
 
-        <div class="slider__bullets">
-          <button class="slider__bullet slider__bullet_active" type="button">
+        <div class="slider__bullets" role="tablist">
+          <button class="slider__bullet slider__bullet_active" id="boston-herald-review-tab" type="button" role="tab" aria-controls="boston-herald-review" aria-selected="true">
             <span class="visuallyhidden">1</span>
           </button>
-          <button class="slider__bullet" type="button">
+          <button class="slider__bullet" id="lorem-ipsum-review-tab" type="button" role="tab" aria-controls="lorem-ipsum-review" aria-selected="false">
             <span class="visuallyhidden">2</span>
           </button>
-          <button class="slider__bullet" type="button">
+          <button class="slider__bullet" id="labore-sequi-review-tab" type="button" role="tab" aria-controls="labore-sequi-review" aria-selected="false">
             <span class="visuallyhidden">3</span>
           </button>
         </div>
@@ -338,7 +338,7 @@
           </ul>
         </section>
         <div class="footer__last-line">
-          <ul class="footer__social inline-list">
+          <ul class="footer__social inline-list" aria-label="Links to social networks and forums">
             <li class="inline-list__item">
               <a class="inline-list__link" href="#">Facebook</a>
             </li>
@@ -364,7 +364,7 @@
     </footer>
   </div>
 
-  <div class="page__social social-bar">
+  <div class="page__social social-bar" aria-hidden="true">
     <a class="social-bar__link" href="//plus.google.com/...">
       <span class="visuallyhidden">Google Plus</span>
     </a>
