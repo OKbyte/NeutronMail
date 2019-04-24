@@ -627,8 +627,35 @@ a.btn_style_white span {
   border-color: hsla(258, 39%, 42%, 0.5);
 }
 
-/* nav-main */
-/*#region*/
+.link-bold-underlined {
+  position: relative;
+
+  text-decoration: none;
+
+  transition: none;
+}
+
+.link-bold-underlined::after {
+  content: "";
+  position: absolute;
+  bottom: 1px;
+  left: -1px;
+
+  display: block;
+  width: 100%;
+  height: 2px;
+
+  background: currentColor;
+  opacity: 0.5;
+
+  transition: opacity 150ms ease-out;
+}
+
+.link-bold-underlined:hover::after,
+.link-bold-underlined:focus::after {
+  opacity: 0;
+}
+
 .nav {
   display: flex;
   align-items: center;
@@ -643,7 +670,9 @@ a.btn_style_white span {
 
   border-bottom: 1px solid hsla(0, 0%, 27%, 0);
 
-  transition: border-color 150ms ease-out;
+  transition-timing-function: ease-out;
+  transition-duration: 150ms;
+  transition-property: color, border-color;
 }
 
 .nav__link:hover,
@@ -656,7 +685,6 @@ a.btn_style_white span {
 .nav__link + .nav__link {
   margin-left: 26px;
 }
-/*#endregion*/
 
 .inline-list {
   display: flex;
@@ -982,7 +1010,7 @@ a.btn_style_white span {
 
 .contacts a {
   font-weight: 700;
-  color: inherit;
+  color: hsl(0, 0%, 36%);
 
   transition: text-decoration 150ms ease-out;
 }
@@ -1503,12 +1531,14 @@ a.btn_style_white span {
 }
 
 .apps__links {
-  margin: 22px 0 0;
+  margin-top: 22px;
 }
 
 .apps__link {
   display: inline-block;
   margin-top: 9px;
+
+  text-decoration: none;
 }
 
 .apps__link + .apps__link {
@@ -1797,7 +1827,7 @@ a.btn_style_white span {
 }
 
 .nav-vertical__item a {
-  color: inherit;
+  color: hsl(0, 0%, 36%);
   text-decoration: underline solid hsla(0, 0%, 36%, 0);
 
   transition: text-decoration 150ms ease-out;
@@ -1888,33 +1918,4 @@ a.btn_style_white span {
 .social-bar__link:active {
   transform: scale(1.1);
   opacity: 1;
-}
-
-.link-bold-underlined {
-  position: relative;
-
-  text-decoration: none;
-
-  transition: none;
-}
-
-.link-bold-underlined::after {
-  content: "";
-  position: absolute;
-  bottom: 1px;
-  left: -1px;
-
-  display: block;
-  width: 100%;
-  height: 2px;
-
-  background: currentColor;
-  opacity: 0.5;
-
-  transition: opacity 150ms ease-out;
-}
-
-.link-bold-underlined:hover::after,
-.link-bold-underlined:focus::after {
-  opacity: 0;
 }
