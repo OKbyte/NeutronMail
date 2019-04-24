@@ -1425,15 +1425,27 @@ button:hover {
 }
 
 .reviews__logos {
+  display: none;
+
   grid-column: 1 / -1;
   grid-row: 1 / span 1;
 }
 
 .reviews__slider {
-  margin: 58px 0 150px;
+  margin: 21px 0 150px;
 
   grid-column: 2 / span 1;
   grid-row: 2 / span 1;
+}
+
+@media screen and (min-width: 540px) {
+  .reviews__logos {
+    display: block;
+  }
+
+  .reviews__slider {
+    margin-top: 58px;
+  }
 }
 
 .apps {
