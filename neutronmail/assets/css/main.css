@@ -879,10 +879,7 @@ a.btn_style_white span {
 
 .slider__slides {
   max-width: 550px;
-  margin: 0;
-  padding: 0;
 
-  list-style: none;
   line-height: 1.3;
   letter-spacing: 0.02em;
 
