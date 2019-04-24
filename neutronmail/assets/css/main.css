@@ -54,6 +54,8 @@
 html {
   font-family: "Titillium Web", "Arial", "Helvetica", sans-serif;
   color: hsl(220, 1%, 53%);
+
+  scroll-behavior: smooth;
 }
 
 blockquote {
